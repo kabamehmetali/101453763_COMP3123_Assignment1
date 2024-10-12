@@ -1,4 +1,4 @@
-// Helper to show alerts
+
 function showAlert(elementId, type, message) {
     const element = document.getElementById(elementId);
     element.classList.remove('d-none');
@@ -7,7 +7,7 @@ function showAlert(elementId, type, message) {
     element.innerText = message;
 }
 
-// Handle Signup
+
 document.getElementById('signup-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -25,7 +25,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
     showAlert('signup-result', response.ok ? 'success' : 'danger', message);
 });
 
-// Handle Login
+
 document.getElementById('login-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const email = document.getElementById('login-email').value;
@@ -42,7 +42,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     showAlert('login-result', response.ok ? 'success' : 'danger', message);
 });
 
-// Handle Employee Registration
+
 document.getElementById('employee-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const first_name = document.getElementById('first_name').value;
@@ -63,7 +63,7 @@ document.getElementById('employee-form').addEventListener('submit', async functi
     showAlert('employee-result', response.ok ? 'success' : 'danger', message);
 });
 
-// Handle Get All Employees
+
 document.getElementById('get-all-employees').addEventListener('click', async function() {
     const response = await fetch('/api/v1/emp/employees', {
         method: 'GET',
@@ -97,7 +97,7 @@ document.getElementById('get-employee-form').addEventListener('submit', async fu
     showAlert('get-employee-result', response.ok ? 'success' : 'danger', message);
 });
 
-// Handle Fetch Employee by ID before update
+
 document.getElementById('get-update-employee-id-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const employeeId = document.getElementById('update-employee-id').value;
@@ -110,7 +110,7 @@ document.getElementById('get-update-employee-id-form').addEventListener('submit'
     const result = await response.json();
     
     if (response.ok) {
-        // Populate form fields with the current employee data
+        
         document.getElementById('update-first-name').value = result.first_name;
         document.getElementById('update-last-name').value = result.last_name;
         document.getElementById('update-email').value = result.email;
@@ -118,7 +118,7 @@ document.getElementById('get-update-employee-id-form').addEventListener('submit'
         document.getElementById('update-salary').value = result.salary;
         document.getElementById('update-department').value = result.department;
 
-        // Show the update form
+       
         document.getElementById('update-employee-form').classList.remove('d-none');
         showAlert('update-employee-result', 'success', 'Employee data loaded successfully. Now you can update.');
     } else {
@@ -126,7 +126,7 @@ document.getElementById('get-update-employee-id-form').addEventListener('submit'
     }
 });
 
-// Handle Update Employee by ID
+
 document.getElementById('update-employee-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const employeeId = document.getElementById('update-employee-id').value;
@@ -157,7 +157,7 @@ document.getElementById('update-employee-form').addEventListener('submit', async
     showAlert('update-employee-result', response.ok ? 'success' : 'danger', message);
 });
 
-// Handle Delete Employee by ID
+
 document.getElementById('delete-employee-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const employeeId = document.getElementById('delete-employee-id').value;
