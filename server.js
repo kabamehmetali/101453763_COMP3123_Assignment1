@@ -1,6 +1,7 @@
 const express = require('express'); // I including express framework
 const mongoose = require('mongoose'); // I include mongoose 
 const dotenv = require('dotenv'); // I include dotenv
+const path = require('path');
 
 
 const userRouter = require('./routes/userRouter'); // I include the user router here
