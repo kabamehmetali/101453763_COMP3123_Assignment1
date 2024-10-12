@@ -97,6 +97,35 @@ document.getElementById('get-employee-form').addEventListener('submit', async fu
     showAlert('get-employee-result', response.ok ? 'success' : 'danger', message);
 });
 
+// Handle Fetch Employee by ID before update
+document.getElementById('get-update-employee-id-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const employeeId = document.getElementById('update-employee-id').value;
+
+    const response = await fetch(`/api/v1/emp/employees/${employeeId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    const result = await response.json();
+    
+    if (response.ok) {
+        // Populate form fields with the current employee data
+        document.getElementById('update-first-name').value = result.first_name;
+        document.getElementById('update-last-name').value = result.last_name;
+        document.getElementById('update-email').value = result.email;
+        document.getElementById('update-position').value = result.position;
+        document.getElementById('update-salary').value = result.salary;
+        document.getElementById('update-department').value = result.department;
+
+        // Show the update form
+        document.getElementById('update-employee-form').classList.remove('d-none');
+        showAlert('update-employee-result', 'success', 'Employee data loaded successfully. Now you can update.');
+    } else {
+        showAlert('update-employee-result', 'danger', `Error: ${result.message}`);
+    }
+});
+
 // Handle Update Employee by ID
 document.getElementById('update-employee-form').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -108,13 +137,14 @@ document.getElementById('update-employee-form').addEventListener('submit', async
     const salary = document.getElementById('update-salary').value;
     const department = document.getElementById('update-department').value;
 
-    const data = {};
-    if (first_name) data.first_name = first_name;
-    if (last_name) data.last_name = last_name;
-    if (email) data.email = email;
-    if (position) data.position = position;
-    if (salary) data.salary = salary;
-    if (department) data.department = department;
+    const data = {
+        first_name,
+        last_name,
+        email,
+        position,
+        salary,
+        department
+    };
 
     const response = await fetch(`/api/v1/emp/employees/${employeeId}`, {
         method: 'PUT',
@@ -126,6 +156,7 @@ document.getElementById('update-employee-form').addEventListener('submit', async
     const message = `Status: ${response.status}, Message: ${result.message}`;
     showAlert('update-employee-result', response.ok ? 'success' : 'danger', message);
 });
+
 // Handle Delete Employee by ID
 document.getElementById('delete-employee-form').addEventListener('submit', async function(event) {
     event.preventDefault();

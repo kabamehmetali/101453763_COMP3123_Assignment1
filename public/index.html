@@ -10,8 +10,8 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">User & Employee Management</h1>
-
-        <!-- Tabs navigation -->
+        <h3 class="text-center">Mehmet Ali KABA - 101453763</h3>
+        <br>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <a class="nav-link active" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="true">Signup</a>
@@ -36,9 +36,9 @@
             </li>
         </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content mt-4">
-            <!-- Signup Form -->
+        
+        <div class="tab-content">
+         
             <div class="tab-pane fade show active" id="signup" role="tabpanel" aria-labelledby="signup-tab">
                 <h2>Signup</h2>
                 <form id="signup-form">
@@ -59,7 +59,7 @@
                 <div id="signup-result" class="alert d-none mt-3"></div>
             </div>
 
-            <!-- Login Form -->
+         
             <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
                 <h2>Login</h2>
                 <form id="login-form">
@@ -76,7 +76,7 @@
                 <div id="login-result" class="alert d-none mt-3"></div>
             </div>
 
-            <!-- Employee Registration Form -->
+            
             <div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="employee-tab">
                 <h2>Register Employee</h2>
                 <form id="employee-form">
@@ -109,14 +109,14 @@
                 <div id="employee-result" class="alert d-none mt-3"></div>
             </div>
 
-            <!-- All Employees -->
+            
             <div class="tab-pane fade" id="all-employees" role="tabpanel" aria-labelledby="all-employees-tab">
                 <h2>All Employees</h2>
                 <button id="get-all-employees" class="btn btn-info">Load Employees</button>
                 <div id="all-employees-result" class="mt-3"></div>
             </div>
 
-            <!-- Get Employee Form -->
+           
             <div class="tab-pane fade" id="get-employee" role="tabpanel" aria-labelledby="get-employee-tab">
                 <h2>Get Employee</h2>
                 <form id="get-employee-form">
@@ -129,45 +129,51 @@
                 <div id="get-employee-result" class="alert d-none mt-3"></div>
             </div>
 
-            <!-- Update Employee Form -->
-<div class="tab-pane fade" id="update-employee" role="tabpanel" aria-labelledby="update-employee-tab">
-    <h2>Update Employee</h2>
-    <form id="update-employee-form">
-        <div class="form-group">
-            <label for="update-employee-id">Employee ID</label>
-            <input type="text" id="update-employee-id" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="update-first-name">First Name</label>
-            <input type="text" id="update-first-name" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="update-last-name">Last Name</label>
-            <input type="text" id="update-last-name" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="update-email">Email</label>
-            <input type="email" id="update-email" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="update-position">New Position</label>
-            <input type="text" id="update-position" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="update-salary">New Salary</label>
-            <input type="number" id="update-salary" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="update-department">New Department</label>
-            <input type="text" id="update-department" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-warning">Update Employee</button>
-    </form>
-    <div id="update-employee-result" class="alert d-none mt-3"></div>
-</div>
+            
+            <div class="tab-pane fade" id="update-employee" role="tabpanel" aria-labelledby="update-employee-tab">
+                <h2>Update Employee</h2>
+                <!-- Form to get Employee ID -->
+                <form id="get-update-employee-id-form">
+                    <div class="form-group">
+                        <label for="update-employee-id">Employee ID</label>
+                        <input type="text" id="update-employee-id" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-info">Fetch Employee</button>
+                </form>
+            
+                <!-- Form to update Employee details, initially hidden -->
+                <form id="update-employee-form" class="d-none">
+                    <div class="form-group">
+                        <label for="update-first-name">First Name</label>
+                        <input type="text" id="update-first-name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-last-name">Last Name</label>
+                        <input type="text" id="update-last-name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-email">Email</label>
+                        <input type="email" id="update-email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-position">New Position</label>
+                        <input type="text" id="update-position" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-salary">New Salary</label>
+                        <input type="number" id="update-salary" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-department">New Department</label>
+                        <input type="text" id="update-department" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-warning">Update Employee</button>
+                </form>
+            
+                <div id="update-employee-result" class="alert d-none mt-3"></div>
+            </div>
 
-
-            <!-- Delete Employee Form -->
+            
             <div class="tab-pane fade" id="delete-employee" role="tabpanel" aria-labelledby="delete-employee-tab">
                 <h2>Delete Employee</h2>
                 <form id="delete-employee-form">
