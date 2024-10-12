@@ -54,7 +54,7 @@ exports.getEmployeeById = async (req, res) => {
     }
 };
 
-// Update an employee by ID
+
 exports.updateEmployee = async (req, res) => {
     try {
         const updatedEmployee = await Employee.findByIdAndUpdate(req.params.eid, req.body, { new: true });
