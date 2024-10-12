@@ -41,12 +41,12 @@ exports.loginUser = [
       const user = await User.findOne({ email });
   
       if (!user) {
-        return res.status(400).json({ status: false, message: 'Invalid Username and password' });
+        return res.status(400).json({ status: false, message: 'Invalid Email or password' });
       }
   
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res.status(400).json({ status: false, message: 'Invalid Username and password' });
+        return res.status(400).json({ status: false, message: 'Invalid Email or password' });
       }
   
       res.status(200).json({ message: 'Login successful' });

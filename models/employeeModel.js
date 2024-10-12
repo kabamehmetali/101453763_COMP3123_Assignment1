@@ -24,7 +24,7 @@ const employeeSchema = new mongoose.Schema({
     },
     date_of_joining: {
         type: Date,
-        required: true,
+        default: Date.now
     },
     department: {
         type: String,
@@ -42,3 +42,4 @@ const employeeSchema = new mongoose.Schema({
 
 const Employee = mongoose.model('Employee', employeeSchema);
 module.exports = Employee;
+

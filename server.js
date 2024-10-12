@@ -1,24 +1,24 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const express = require('express'); // I including express framework
+const mongoose = require('mongoose'); // I include mongoose 
+const dotenv = require('dotenv'); // I include dotenv
 
 
-const userRouter = require('./routes/userRouter');
-const employeeRouter = require('./routes/employeeRouter');
+const userRouter = require('./routes/userRouter'); // I include the user router here
+const employeeRouter = require('./routes/employeeRouter'); // i inculde the employee router here
 
 
-// Load environment variables
+// this is to load environment variables
 dotenv.config();
 
-// Initialize Express app
+// this is to initialize Express app
 const app = express();
 
-// Middleware to parse JSON requests
+// this is the middleware to parse JSON requests
 app.use(express.json());
 
-// MongoDB connection
-const mongoURI = 'mongodb+srv://mehmetalikaba:Bilmem555.@cluster0.hpel7.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority';
-mongoose.connect(mongoURI, {
+// This is my mongo db connection string
+const mongoURI = 'mongodb+srv://mehmetalikaba:Mypwd432.@cluster0.hpel7.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority';
+mongoose.connect(mongoURI, { // This tryies to connect and returns then if connected or catch if it did not connect
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
