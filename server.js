@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 // MongoDB connection
-const mongoURI = process.env.MONGO_URI || 'mongodb+srv://mehmetalikaba:Bilmem555.@cluster0.hpel7.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://mehmetalikaba:Bilmem555.@cluster0.hpel7.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority';
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
