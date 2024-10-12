@@ -145,8 +145,6 @@ Example error response:
 }
 ```
 
-## Screenshots
-
 
 
 ---
