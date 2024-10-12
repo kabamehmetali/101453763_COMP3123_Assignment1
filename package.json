@@ -1,17 +1,19 @@
 {
   "name": "assignment01",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build script required'",
+    "vercel-build": "npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mehmet Ali Kaba",
   "license": "ISC",
-  "description": "",
+  "description": "COMP3123 Assignment 1 for user and employee management",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3", 
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-validator": "^7.2.0",
@@ -19,5 +21,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
