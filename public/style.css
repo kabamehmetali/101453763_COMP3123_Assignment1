@@ -1,11 +1,84 @@
-.form-section {
-    display: none;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
-.form-section.active {
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-section {
+    margin-top: 20px;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#signup-result, #login-result, #employee-result, #get-employee-result, #all-employees-result, 
+#update-employee-result, #delete-employee-result {
+    margin-top: 15px;
+    color: red;
+}
+
+.nav-tabs .nav-link {
+    font-size: 18px;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.tab-pane h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.mt-4 {
+    margin-top: 30px !important;
+}
+
+.alert {
+    padding: 10px;
+    margin-top: 20px;
     display: block;
 }
 
-#signup-result, #login-result, #employee-result {
-    color: red;
+.d-none {
+    display: none !important;
+}
+
+#all-employees-result pre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
 }
