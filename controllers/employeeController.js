@@ -1,6 +1,6 @@
 const Employee = require('../models/employeeModel');
 
-// Create a new employee
+
 exports.createEmployee = async (req, res) => {
     try {
         const newEmployee = new Employee(req.body);
@@ -11,7 +11,7 @@ exports.createEmployee = async (req, res) => {
     }
 };
 
-// Get all employees
+
 exports.getEmployees = async (req, res) => {
     try {
         const employees = await Employee.find();
@@ -31,7 +31,7 @@ exports.getEmployees = async (req, res) => {
     }
 };
 
-// Get employee by ID
+
 exports.getEmployeeById = async (req, res) => {
     try {
         const employee = await Employee.findById(req.params.eid);
@@ -66,7 +66,7 @@ exports.updateEmployee = async (req, res) => {
     }
 };
 
-// Delete an employee by ID
+
 exports.deleteEmployee = async (req, res) => {
     try {
         const deletedEmployee = await Employee.findByIdAndDelete(req.query.eid);

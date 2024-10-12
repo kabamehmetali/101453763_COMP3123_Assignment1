@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// User Schema
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -27,7 +26,7 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-// Hash the password before saving
+
 userSchema.pre('save', async function (next) {
     try {
         if (!this.isModified('password')) return next();
@@ -39,7 +38,7 @@ userSchema.pre('save', async function (next) {
     }
 });
 
-// Allow login using username or email
+
 userSchema.statics.findByCredentials = async function (identifier, password) {
     const user = await this.findOne({
         $or: [{ username: identifier }, { email: identifier }]
