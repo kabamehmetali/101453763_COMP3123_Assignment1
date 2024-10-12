@@ -1,7 +1,7 @@
 
 # 101453763_COMP3123_Assignment1
 
-**Author**: Mehmet Ali Kaba  
+**Student Name**: Mehmet Ali Kaba  
 **Student Number**: 101453763
 
 ## Table of Contents
@@ -15,7 +15,6 @@
 - [Testing the API](#testing-the-api)
 - [Error Handling](#error-handling)
 - [Screenshots](#screenshots)
-- [Future Enhancements](#future-enhancements)
 
 ---
 
@@ -146,11 +145,9 @@ Example error response:
 }
 ```
 
-## Future Enhancements
+## Screenshots
 
-- **JWT Authentication**: Implement JWT for securing the API endpoints.
-- **Additional Fields**: Extend employee schema to include more information (e.g., performance reviews).
-- **Testing**: Implement automated tests for all endpoints.
+
 
 ---
 
