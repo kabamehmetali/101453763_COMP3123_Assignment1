@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "build": "echo 'No build script required'",
-    "vercel-build": "npm install && npm run build && npm install express"
+    "vercel-build": "npm install && npm run build"
     
   },
   "keywords": [],
