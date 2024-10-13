@@ -1,22 +1,38 @@
 steps:
-  # Install dependencies
-  - name: 'node:16'
+  # Step 1: Install dependencies using Node.js 20
+  - name: 'node:20'
     entrypoint: 'npm'
     args: ['install']
 
-  # Run build (if needed)
-  - name: 'node:16'
+  # Step 2: Run build command (if necessary)
+  - name: 'node:20'
     entrypoint: 'npm'
     args: ['run', 'build']
 
-  # Run tests (optional, you can remove this if no tests)
-  - name: 'node:16'
+  # Step 3: Run tests (optional, you can remove this step if you don't need tests)
+  - name: 'node:20'
     entrypoint: 'npm'
     args: ['test']
 
-  # Package the app into a container image using Cloud Buildpacks
+  # Step 4: Build and push the container image using Cloud Buildpacks
   - name: 'gcr.io/buildpacks/builder'
     args: ['pack', 'build', '--builder=gcr.io/buildpacks/builder', '--path=.', 'gcr.io/$PROJECT_ID/$REPO_NAME']
 
+  # Step 5: Deploy the container image to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'gcloud'
+    args: ['run', 'deploy', '$SERVICE_NAME', '--image=gcr.io/$PROJECT_ID/$REPO_NAME', '--region=$DEPLOY_REGION', '--platform=$PLATFORM', '--allow-unauthenticated']
+
+substitutions:
+  _AR_HOSTNAME: "northamerica-northeast2-docker.pkg.dev"
+  _DEPLOY_REGION: "northamerica-northeast2"
+  _ENTRYPOINT: "server.js"
+  _PLATFORM: "managed"
+  _SERVICE_NAME: "assignment01"
+  _TRIGGER_ID: "d265018a-7a77-4078-b609-d25c06491fae"
+  REPO_NAME: "101453763_comp3123_assignment1"
+
 images:
   - 'gcr.io/$PROJECT_ID/$REPO_NAME'
+
+timeout: '1200s'
