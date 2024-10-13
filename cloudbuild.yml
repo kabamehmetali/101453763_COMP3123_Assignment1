@@ -1,0 +1,22 @@
+steps:
+  # Install dependencies
+  - name: 'node:16'
+    entrypoint: 'npm'
+    args: ['install']
+
+  # Run build (if needed)
+  - name: 'node:16'
+    entrypoint: 'npm'
+    args: ['run', 'build']
+
+  # Run tests (optional, you can remove this if no tests)
+  - name: 'node:16'
+    entrypoint: 'npm'
+    args: ['test']
+
+  # Package the app into a container image using Cloud Buildpacks
+  - name: 'gcr.io/buildpacks/builder'
+    args: ['pack', 'build', '--builder=gcr.io/buildpacks/builder', '--path=.', 'gcr.io/$PROJECT_ID/$REPO_NAME']
+
+images:
+  - 'gcr.io/$PROJECT_ID/$REPO_NAME'
