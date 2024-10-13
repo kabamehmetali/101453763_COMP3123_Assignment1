@@ -14,7 +14,6 @@
 - [Validation](#validation)
 - [Testing the API](#testing-the-api)
 - [Error Handling](#error-handling)
-- [Screenshots](#screenshots)
 
 ---
 
@@ -126,8 +125,6 @@ You can test the API endpoints using Postman. Import the collection into Postman
 6. **Update Employee**: `PUT /api/v1/emp/employees/:eid`
 7. **Delete Employee**: `DELETE /api/v1/emp/employees?eid=<employee_id>`
 
-### Screenshots
-- Ensure to capture screenshots of the API tests in Postman and attach them to your project for submission.
 
 ## Error Handling
 
