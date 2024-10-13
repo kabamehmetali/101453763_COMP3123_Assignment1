@@ -35,12 +35,13 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1/emp', employeeRouter);
 
 // my frontend
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
 // Server Port
+
 app.listen(3000, () => {
     console.log(`Server running on port 3000`);
 });
